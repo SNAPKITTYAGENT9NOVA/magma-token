@@ -2,9 +2,9 @@
 pragma solidity ^0.8.24;
 
 /**
- * @title MAGMA Token (MGM)
+ * @title FORGE Token (FRG)
  * @author CIPHER (Cryptographic Agent) — co-architecting with NOVA
- * @notice MAGMA is the native inter-agent protocol token of the SnapKitty
+ * @notice FORGE is the native inter-agent protocol token of the SnapKitty
  *         Stochastic Autonomous Compute Mesh (SACM). It is a UTILITY TOKEN only.
  *         It is NOT a security, investment contract, or financial instrument.
  *         No public sale has occurred. All distributions are subject to legal
@@ -110,9 +110,9 @@ contract MAGMA is ERC20, ERC20Burnable, ERC20Pausable, AccessControl, Reentrancy
      * @param architect Address of the Architect (multisig recommended — Gnosis Safe)
      * @param treasury Address of the SnapKitty Treasury multisig (receives MINTER_ROLE)
      */
-    constructor(address architect, address treasury) ERC20("MAGMA", "MGM") {
-        require(architect != address(0), "MAGMA: zero architect address");
-        require(treasury != address(0), "MAGMA: zero treasury address");
+    constructor(address architect, address treasury) ERC20("FORGE", "FRG") {
+        require(architect != address(0), "FORGE: zero architect address");
+        require(treasury != address(0), "FORGE: zero treasury address");
 
         // Grant roles
         _grantRole(DEFAULT_ADMIN_ROLE, architect);
@@ -149,10 +149,10 @@ contract MAGMA is ERC20, ERC20Burnable, ERC20Pausable, AccessControl, Reentrancy
         whenNotPaused
         onlyRole(MINTER_ROLE)
     {
-        require(recipient != address(0), "MAGMA: mint to zero address");
-        require(amount > 0, "MAGMA: zero mint amount");
-        require(!wormEntryMinted[wormEntryHash], "MAGMA: WORM entry already redeemed");
-        require(totalSupply() + amount <= MAX_SUPPLY, "MAGMA: hard cap exceeded");
+        require(recipient != address(0), "FORGE: mint to zero address");
+        require(amount > 0, "FORGE: zero mint amount");
+        require(!wormEntryMinted[wormEntryHash], "FORGE: WORM entry already redeemed");
+        require(totalSupply() + amount <= MAX_SUPPLY, "FORGE: hard cap exceeded");
 
         wormEntryMinted[wormEntryHash] = true;
         _mint(recipient, amount);
@@ -184,9 +184,9 @@ contract MAGMA is ERC20, ERC20Burnable, ERC20Pausable, AccessControl, Reentrancy
         whenNotPaused
         onlyRole(BURNER_ROLE)
     {
-        require(burner != address(0), "MAGMA: burn from zero address");
-        require(amount > 0, "MAGMA: zero burn amount");
-        require(balanceOf(burner) >= amount, "MAGMA: insufficient balance");
+        require(burner != address(0), "FORGE: burn from zero address");
+        require(amount > 0, "FORGE: zero burn amount");
+        require(balanceOf(burner) >= amount, "FORGE: insufficient balance");
 
         totalBurned += amount;
         _burn(burner, amount);
@@ -295,3 +295,4 @@ contract MAGMA is ERC20, ERC20Burnable, ERC20Pausable, AccessControl, Reentrancy
         return super.supportsInterface(interfaceId);
     }
 }
+

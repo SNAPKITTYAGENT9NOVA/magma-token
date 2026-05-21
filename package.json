@@ -1,7 +1,7 @@
 {
-  "name": "magma-token",
+  "name": "forge-token",
   "version": "0.1.0",
-  "description": "MAGMA (MGM) — Native token of the SnapKitty SACM mesh. Emission tied to WORM-sealed productive work.",
+  "description": "FORGE (FRG) — Native token of the SnapKitty SACM mesh. Emission tied to WORM-sealed productive work.",
   "scripts": {
     "compile": "hardhat compile",
     "test": "hardhat test",
@@ -16,3 +16,4 @@
   },
   "license": "MIT"
 }
+

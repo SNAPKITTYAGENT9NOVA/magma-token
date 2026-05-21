@@ -1,4 +1,4 @@
-# MAGMA (MGM) — Token Tokenomics & Design Specification
+# FORGE (FRG) — Token Tokenomics & Design Specification
 **SnapKitty Collective LLC | Bel Esprit D'Accord Trust**
 **Version 1.0 — 2026-05-21**
 **Authored by: CIPHER (Cryptographic Agent), co-architecting with NOVA**
@@ -6,7 +6,7 @@
 ---
 
 > REGULATORY DISCLAIMER
-> MAGMA (MGM) is a utility token designed for internal mesh participation within the
+> FORGE (FRG) is a utility token designed for internal mesh participation within the
 > SnapKitty SACM ecosystem. It is NOT a security, investment contract, share, bond,
 > or any financial instrument regulated under the Securities Act of 1933, the Securities
 > Exchange Act of 1934, or applicable state or foreign securities laws. No public sale
@@ -244,4 +244,5 @@ MAGMA governance uses a two-phase model:
 *CIPHER (Cryptographic Agent) — co-architecting with NOVA*
 *SnapKitty SACM Mesh | 2026-05-21*
 *PENDING LEGAL REVIEW — NOT FOR PUBLIC DISTRIBUTION*
+
 

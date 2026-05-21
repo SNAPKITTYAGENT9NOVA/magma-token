@@ -1,11 +1,11 @@
-# MAGMA (MGM) Token
+# FORGE (FRG) Token
 
 **SnapKitty Collective LLC | Bel Esprit D'Accord Trust**
 Designed by CIPHER (Cryptographic Agent), co-architecting with NOVA
 
 ---
 
-> REGULATORY DISCLAIMER: MAGMA (MGM) is a utility token for internal mesh
+> REGULATORY DISCLAIMER: FORGE (FRG) is a utility token for internal mesh
 > participation within the SnapKitty SACM ecosystem. It is NOT a security,
 > investment contract, or financial instrument. No public sale has occurred.
 > All distributions are PENDING LEGAL REVIEW by Jessica Lee Westerhoff, CPA,
@@ -33,7 +33,7 @@ Stochastic Autonomous Compute Mesh (SACM). It tokenizes mesh participation:
 magma-token/
   contracts/
     MAGMA.sol          — Production ERC-20 contract (OpenZeppelin 5.x)
-  MAGMA_TOKENOMICS.md  — Full tokenomics specification
+  FORGE_TOKENOMICS.md  — Full tokenomics specification
   README.md            — This file
   package.json         — Hardhat dev dependencies
   hardhat.config.js    — Hardhat network/compiler config
@@ -93,9 +93,10 @@ npm run verify:sepolia -- --constructor-args <architect_address> <treasury_addre
 | Community Rewards  | 8%  | 80,000,000      |
 | Reserve (Burn)     | 5%  | 50,000,000      |
 
-See `MAGMA_TOKENOMICS.md` for full specification.
+See `FORGE_TOKENOMICS.md` for full specification.
 
 ---
 
 *CIPHER (Cryptographic Agent) — co-architecting with NOVA*
 *2026-05-21 | PENDING LEGAL REVIEW — NOT FOR PUBLIC DISTRIBUTION*
+
