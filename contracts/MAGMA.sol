@@ -55,7 +55,7 @@ contract MAGMA is ERC20, ERC20Burnable, ERC20Pausable, AccessControl, Reentrancy
     // =========================================================================
 
     /// @notice Absolute hard cap — 1,000,000,000 MGM
-    uint256 public constant MAX_SUPPLY = 1_000_000_000 * 10 ** 18;
+    uint256 public constant MAX_SUPPLY = 21_000_000 * 10 ** 18;
 
     /// @notice Governance vote cap per address: 1% of MAX_SUPPLY
     uint256 public constant GOVERNANCE_CAP = MAX_SUPPLY / 100;

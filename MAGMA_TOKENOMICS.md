@@ -27,7 +27,7 @@
 | Name         | MAGMA                                                   |
 | Symbol       | MGM                                                     |
 | Decimals     | 18                                                      |
-| Hard Cap     | 1,000,000,000 MGM (one billion)                         |
+| Hard Cap     | 21,000,000 MGM (one billion)                         |
 | Standard     | ERC-20 (OpenZeppelin 5.x)                               |
 | Chain        | Base L2 (Coinbase Layer 2, OP Stack)                    |
 | Contract     | `contracts/MAGMA.sol`                                   |
@@ -61,18 +61,18 @@ Base is chosen because:
 
 ## 3. Total Supply & Distribution
 
-**Hard Cap: 1,000,000,000 MGM**
+**Hard Cap: 21,000,000 MGM**
 
 | Allocation         | Percentage | MGM Amount      | Purpose                                                      |
 |--------------------|------------|-----------------|--------------------------------------------------------------|
-| Mesh Agent Rewards | 35%        | 350,000,000     | Earned by SACM agents for WORM-verified work                 |
-| Treasury           | 25%        | 250,000,000     | Operations, grants, liquidity provisioning, future programs  |
-| Team & Founders    | 15%        | 150,000,000     | Jessica Westerhoff & Ahmad — 50/50 per ownership structure   |
-| Ecosystem Fund     | 12%        | 120,000,000     | Partnerships, integrations, developer grants                 |
-| Community Rewards  | 8%         | 80,000,000      | SEALFORGE users, early adopters, referral programs           |
-| Reserve (Burn)     | 5%         | 50,000,000      | Deflationary reserve — burned on milestones                  |
+| Mesh Agent Rewards | 35%        | 7,350,000     | Earned by SACM agents for WORM-verified work                 |
+| Treasury           | 25%        | 5,250,000     | Operations, grants, liquidity provisioning, future programs  |
+| Team & Founders    | 15%        | 3,150,000     | Jessica Westerhoff & Ahmad — 50/50 per ownership structure   |
+| Ecosystem Fund     | 12%        | 2,520,000     | Partnerships, integrations, developer grants                 |
+| Community Rewards  | 8%         | 1,680,000      | SEALFORGE users, early adopters, referral programs           |
+| Reserve (Burn)     | 5%         | 1,050,000      | Deflationary reserve — burned on milestones                  |
 
-**Total: 100% / 1,000,000,000 MGM**
+**Total: 100% / 21,000,000 MGM**
 
 No tokens are minted at contract deployment. All distributions are executed by the
 Treasury multisig via WORM-gated `wormMint()` calls. This ensures every token in
@@ -82,7 +82,7 @@ existence corresponds to a sealed, auditable WORM ledger entry.
 
 ## 4. Vesting Schedules
 
-### Team & Founders (150,000,000 MGM — 15%)
+### Team & Founders (3,150,000 MGM — 15%)
 
 | Tranche    | Amount        | Release Condition                           |
 |------------|---------------|---------------------------------------------|
@@ -94,23 +94,23 @@ existence corresponds to a sealed, auditable WORM ledger entry.
 Both founders (Jessica Westerhoff, Ahmad) split 50/50 in accordance with the
 Bel Esprit D'Accord Trust ownership structure.
 
-### Treasury (250,000,000 MGM — 25%)
+### Treasury (5,250,000 MGM — 25%)
 
 - Controlled by Gnosis Safe multisig (3-of-5 signers minimum)
 - No vesting cliff — immediately usable for operational minting
 - Governed by quarterly spending proposals voted on by MGM holders
 
-### Ecosystem Fund (120,000,000 MGM — 12%)
+### Ecosystem Fund (2,520,000 MGM — 12%)
 
 - 24-month linear release against approved grant milestones
 - Each grant release requires a WORM-sealed approval entry
 
-### Community Rewards (80,000,000 MGM — 8%)
+### Community Rewards (1,680,000 MGM — 8%)
 
 - Distributed on-demand as SEALFORGE users and agents qualify
 - No vesting — liquid on receipt (incentive design)
 
-### Mesh Agent Rewards (350,000,000 MGM — 35%)
+### Mesh Agent Rewards (7,350,000 MGM — 35%)
 
 - Distributed continuously as agents generate verified WORM entries
 - Rate governed by the Emission Schedule (see Section 6)
@@ -182,10 +182,10 @@ hash of each WORM entry as the nonce. No entry can be double-spent.
 MAGMA is designed to be deflationary over time:
 
 1. **SEALFORGE Burns** — every subscription renewal and tier upgrade burns MGM permanently.
-2. **Reserve Burns** — 50,000,000 MGM reserve is burned against milestones
+2. **Reserve Burns** — 1,050,000 MGM reserve is burned against milestones
    ($500k ARR, $1M ARR, $3M ARR).
 3. **Governance Burns** — failed proposals burn 50% of the staked submission bond.
-4. **Hard Cap** — once 1,000,000,000 MGM are minted, no further minting is possible.
+4. **Hard Cap** — once 21,000,000 MGM are minted, no further minting is possible.
 
 At $3M ARR (the revenue target), estimated annual burn from SEALFORGE subscriptions:
 - Assume 5,000 Basic, 500 Pro, 50 Architect users
@@ -244,3 +244,4 @@ MAGMA governance uses a two-phase model:
 *CIPHER (Cryptographic Agent) — co-architecting with NOVA*
 *SnapKitty SACM Mesh | 2026-05-21*
 *PENDING LEGAL REVIEW — NOT FOR PUBLIC DISTRIBUTION*
+
