@@ -15,10 +15,10 @@ pragma solidity ^0.8.24;
  *
  * @dev ERC-20 implementation built on OpenZeppelin 5.x base contracts.
  *      Key mechanics:
- *        - Hard cap: 1,000,000,000 MGM (one billion, 18 decimals)
+ *        - Hard cap: 21,000,000 FRG (twenty-one million, 18 decimals) — VAULT ruling 2026-05-21
  *        - Mint gated to WORM-verified work events via the treasury multisig
  *        - Burn mechanic for SEALFORGE tier upgrades
- *        - Governance weight: 1 MGM = 1 vote, capped at 1% of supply per address
+ *        - Governance weight: 1 FRG = 1 vote, capped at 1% of supply per address
  *        - Emergency pause controlled by the Architect role
  *
  * @custom:security-contact legal@snapkitty.io
@@ -32,7 +32,7 @@ import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Pausable.sol";
 import "@openzeppelin/contracts/access/AccessControl.sol";
 import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
 
-contract MAGMA is ERC20, ERC20Burnable, ERC20Pausable, AccessControl, ReentrancyGuard {
+contract FORGE is ERC20, ERC20Burnable, ERC20Pausable, AccessControl, ReentrancyGuard {
 
     // =========================================================================
     //  ROLES
@@ -54,7 +54,7 @@ contract MAGMA is ERC20, ERC20Burnable, ERC20Pausable, AccessControl, Reentrancy
     //  SUPPLY CONSTANTS
     // =========================================================================
 
-    /// @notice Absolute hard cap — 1,000,000,000 MGM
+    /// @notice Absolute hard cap — 21,000,000 FRG (VAULT supply ruling 2026-05-21)
     uint256 public constant MAX_SUPPLY = 21_000_000 * 10 ** 18;
 
     /// @notice Governance vote cap per address: 1% of MAX_SUPPLY
@@ -64,7 +64,7 @@ contract MAGMA is ERC20, ERC20Burnable, ERC20Pausable, AccessControl, Reentrancy
     //  STATE
     // =========================================================================
 
-    /// @notice Total MGM burned to date (informational)
+    /// @notice Total FRG burned to date (informational, tracked across all burn paths)
     uint256 public totalBurned;
 
     /// @notice WORM entry hash => minted flag — prevents replay of the same
@@ -188,7 +188,6 @@ contract MAGMA is ERC20, ERC20Burnable, ERC20Pausable, AccessControl, Reentrancy
         require(amount > 0, "FORGE: zero burn amount");
         require(balanceOf(burner) >= amount, "FORGE: insufficient balance");
 
-        totalBurned += amount;
         _burn(burner, amount);
 
         emit SealforgeBurn(burner, amount, tier);
@@ -270,12 +269,11 @@ contract MAGMA is ERC20, ERC20Burnable, ERC20Pausable, AccessControl, Reentrancy
     }
 
     /**
-     * @dev Override burn to track totalBurned when called via standard
-     *      ERC20Burnable interface (direct holder burns).
+     * @dev Override burn to track totalBurned for ALL burn paths, including
+     *      direct ERC20Burnable.burn() calls by holders.
      */
     function _burn(address account, uint256 amount) internal override {
-        // totalBurned is only incremented via sealforgeBurn (which calls _burn internally)
-        // For direct burns via ERC20Burnable.burn(), increment here
+        totalBurned += amount;
         super._burn(account, amount);
     }
 
