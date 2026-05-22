@@ -9,5 +9,8 @@
   "timestamp": "2026-05-21T23:50:55.406Z",
   "maxSupply": "21000000",
   "symbol": "FRG",
-  "note": "UTILITY TOKEN ONLY — legal sign-off required before public distribution — Jessica Lee Westerhoff CPA"
+  "note": "UTILITY TOKEN ONLY — legal sign-off required before public distribution — Jessica Lee Westerhoff CPA",
+  "forgeArtAddress": "0x158320f471639754D36248b9aD19A82F51C309f4",
+  "forgeArtTxHash": "0x22961833157a955a50ebf0ff81632cf6711e89ad68a026d03be785b65e9f50b7",
+  "forgeArtBlock": 41819981
 }
